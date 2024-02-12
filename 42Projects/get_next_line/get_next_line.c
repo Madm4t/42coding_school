@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:53:30 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/12 13:06:52 by mgering          ###   ########.fr       */
+/*   Updated: 2024/02/12 17:37:06 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,22 @@ char	*read_line(int fd, char *buffer)
 	bytes_read = 1;
 	temp_buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!temp_buffer)
+	{
+		if (buffer)
+			free(buffer);
 		return (NULL);
+	}
 	while (0 < bytes_read && !ft_strchr(temp_buffer, '\n'))
 	{
 		bytes_read = read(fd, temp_buffer, BUFFER_SIZE);
 		if (0 > bytes_read)
-			return (free(temp_buffer), NULL);
+			return (free(temp_buffer), free(buffer), NULL);
 		temp_buffer[bytes_read] = '\0';
 		buffer = ft_strjoin(buffer, temp_buffer);
 	}
-	return (free(temp_buffer), buffer);
+	if (temp_buffer)
+		free(temp_buffer);
+	return (buffer);
 }
 
 char	*cut_line(char *buffer)
@@ -81,7 +87,6 @@ char	*cut_line(char *buffer)
 		i++;
 	}
 	line[i] = '\0';
-	line_length = 0;
 	return (line);
 }
 
@@ -99,7 +104,10 @@ char	*buffer_left(char *buffer, size_t line_length)
 		return (free(buffer), NULL);
 	temp = ft_calloc((temp_length - line_length + 1), sizeof(char));
 	if (!temp)
-		return (free(buffer), NULL);
+	{
+		free(buffer);
+		return (NULL);
+	}
 	while (buffer[line_length] != '\0')
 	{
 		temp[i] = buffer[line_length];
@@ -107,42 +115,8 @@ char	*buffer_left(char *buffer, size_t line_length)
 		line_length++;
 	}
 	temp[i] = '\0';
-	return (free(buffer), temp);
+	free(buffer);
+	return (temp);
 }
 
-/* 
-int main()
-{
-	int fd;
-	char *line = NULL;
-	fd = open("text.txt", O_RDONLY);
-	int i = 0;
-	while (i++ < 8)
-	{
-		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
-	}
-	close (fd);
-	return (0);
-} */
 
-// int main()
-// {
-// 	int fd;
-// 	FILE *fp = NULL;
-// 	char *line = NULL;
-// 	size_t BUFFER = 100;
-// 	ssize_t readbytes = 0;
-// 	fd = open("texts.txt", O_RDONLY);
-
-// 	while (readbytes != -1)
-// 	{
-		// line = get_next_line(fd);
-		// readbytes = getline(&line ,&BUFFER,fp);
-// 		printf("%s", line);
-// 	}
-// 	close (fd);
-// 	// free(line);
-// 	return (0);
-// }
