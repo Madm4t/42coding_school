@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:30:51 by mgering           #+#    #+#             */
-/*   Updated: 2024/01/30 15:56:38 by mgering          ###   ########.fr       */
+/*   Updated: 2024/02/12 11:44:26 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 100
 # endif
 
 # include <fcntl.h>		//for open
