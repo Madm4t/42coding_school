@@ -1,1 +1,0 @@
-# 42coding_school
