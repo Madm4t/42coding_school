@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 15:30:55 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/08 16:21:52 by mgering          ###   ########.fr       */
+/*   Created: 2024/02/15 13:14:01 by mgering           #+#    #+#             */
+/*   Updated: 2024/02/15 13:27:39 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 char	*ft_strchr(char *s, int c)
 {
-	while (*s != '\0')
+	while ('\0' != *s)
 	{
 		if ((unsigned char)*s == (unsigned char)c)
 			return ((char *)s);
@@ -25,7 +25,7 @@ char	*ft_strchr(char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*gnl_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
@@ -36,14 +36,14 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	str = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (!str)
-		return (NULL);
-	while (s1 && s1[i] != '\0')
+		return (free(s1), NULL);
+	while (s1 && '\0' != s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (s2 && s2[j] != '\0')
+	while (s2 && '\0' != s2[j])
 	{
 		str[i + j] = s2[j];
 		j++;
@@ -61,7 +61,7 @@ size_t	ft_strlen(char *s)
 	i = 0;
 	if (!s)
 		return (0);
-	while (s[i] != '\0')
+	while ('\0' != s[i])
 	{
 		i++;
 	}
