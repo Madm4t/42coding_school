@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:11:49 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/15 13:29:19 by mgering          ###   ########.fr       */
+/*   Updated: 2024/02/15 13:36:06 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 char	*get_next_line(int fd);
 char	*read_line(int fd, char *buffer);
-char	*cut_line(char *temp_buf);
-char	*buffer_left(char *temp_buffer, size_t line_length);
+char	*cut_line(char *buffer);
+char	*buffer_left(char *buffer, size_t line_length);
 
 char	*ft_strchr(char *s, int c);
 char	*gnl_strjoin(char *s1, char *s2);

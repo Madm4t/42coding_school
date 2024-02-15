@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:14:01 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/15 13:27:39 by mgering          ###   ########.fr       */
+/*   Updated: 2024/02/15 13:42:05 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ char	*gnl_strjoin(char *s1, char *s2)
 	size_t	j;
 
 	i = 0;
-	if (!s1 && !s2)
-		return (NULL);
 	str = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (!str)
 		return (free(s1), NULL);
