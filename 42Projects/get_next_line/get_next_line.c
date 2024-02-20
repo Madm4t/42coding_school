@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:53:30 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/15 13:24:50 by mgering          ###   ########.fr       */
+/*   Updated: 2024/02/19 17:11:40 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,19 @@ char	*buffer_left(char *buffer, size_t line_length)
 	temp[i] = '\0';
 	free(buffer);
 	return (temp);
+}
+
+int	main(void)
+{
+	int		fd;
+	char	*line;
+
+	fd = open("test.txt", O_RDONLY);
+	while ((line = get_next_line(fd)))
+	{
+		printf("-->%s", line);
+		free(line);
+	}
+	close(fd);
+	return(0);
 }
