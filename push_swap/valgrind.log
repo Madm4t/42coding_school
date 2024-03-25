@@ -1,0 +1,68 @@
+==26411== Lackey, an example Valgrind tool
+==26411== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote.
+==26411== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==26411== Command: ./push_swap
+==26411== Parent PID: 10949
+==26411== 
+--26411-- 
+--26411-- Valgrind options:
+--26411--    -v
+--26411--    --tool=callgrind
+--26411--    --tool=memcheck
+--26411--    --tool=helgrind
+--26411--    --tool=cachegrind
+--26411--    --tool=lackey
+--26411--    --log-file=valgrind.log
+--26411-- Contents of /proc/version:
+--26411--   Linux version 6.2.0-1019-azure (buildd@lcy02-amd64-088) (x86_64-linux-gnu-gcc-11 (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #19~22.04.1-Ubuntu SMP Wed Jan 10 22:57:03 UTC 2024
+--26411-- 
+--26411-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--26411-- Page sizes: currently 4096, max supported 4096
+--26411-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--26411-- Reading syms from /workspaces/42coding_school/push_swap/push_swap
+--26411-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--26411--   Considering /usr/lib/debug/.build-id/7a/e2aaae1a0e5b262df913ee0885582d2e327982.debug ..
+--26411--   .. build-id is valid
+--26411-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/lackey-amd64-linux
+--26411--    object doesn't have a symbol table
+--26411--    object doesn't have a dynamic symbol table
+--26411-- Scheduler: using generic scheduler lock implementation.
+==26411== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-26411-by-codespace-on-codespaces-bddbf4
+==26411== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-26411-by-codespace-on-codespaces-bddbf4
+==26411== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-26411-by-codespace-on-codespaces-bddbf4
+==26411== 
+==26411== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==26411== don't want to do, unless you know exactly what you're doing,
+==26411== or are doing some strange experiment):
+==26411==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=26411 ...command...
+==26411== 
+==26411== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==26411==   /path/to/gdb ./push_swap
+==26411== and then give GDB the following command
+==26411==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=26411
+==26411== --pid is optional if only one valgrind process is running
+==26411== 
+--26411-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--26411--    object doesn't have a symbol table
+--26411-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--26411--   Considering /usr/lib/debug/.build-id/ee/be5d5f4b608b8a53ec446b63981bba373ca0ca.debug ..
+--26411--   .. build-id is valid
+==26411== 
+==26411== Counted 1 call to main()
+==26411== 
+==26411== Jccs:
+==26411==   total:         31,941
+==26411==   taken:         15,169 (47%)
+==26411== 
+==26411== Executed:
+==26411==   SBs entered:   32,148
+==26411==   SBs completed: 21,623
+==26411==   guest instrs:  152,479
+==26411==   IRStmts:       915,407
+==26411== 
+==26411== Ratios:
+==26411==   guest instrs : SB entered  = 47 : 10
+==26411==        IRStmts : SB entered  = 284 : 10
+==26411==        IRStmts : guest instr = 60 : 10
+==26411== 
+==26411== Exit code:       0
