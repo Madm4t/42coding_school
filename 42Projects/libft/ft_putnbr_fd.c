@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 16:05:08 by mgering           #+#    #+#             */
-/*   Updated: 2023/11/09 12:35:49 by mgering          ###   ########.fr       */
+/*   Updated: 2023/10/25 17:48:21 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@ n: The integer to output.
 fd: The file descriptor on which to write. */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -38,8 +37,8 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd(n + '0', fd);
 }
-/* 
-int main()
+
+/* int main()
 {
 	ft_putnbr_fd(-2147483647, 1);
-}  */
+} */

@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:37:55 by mgering           #+#    #+#             */
-/*   Updated: 2023/11/28 15:48:52 by mgering          ###   ########.fr       */
+/*   Updated: 2023/11/27 17:06:08 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int	write_number(int n, t_flags *flag)
 	}
 	else
 		i = n;
-	if (i >= flag->base)
+	if (i >= 10)
 	{
-		write_number(i / flag->base, flag);
-		write_number(i % flag->base, flag);
+		write_number(i / 10, flag);
+		write_number(i % 10, flag);
 	}
 	else
 	{

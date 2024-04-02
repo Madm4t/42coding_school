@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:53:30 by mgering           #+#    #+#             */
-/*   Updated: 2024/02/19 16:10:46 by codespace        ###   ########.fr       */
+/*   Updated: 2024/03/12 15:31:39 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,17 +119,3 @@ char	*buffer_left(char *buffer, size_t line_length)
 	return (temp);
 }
 
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("test.txt", O_RDONLY);
-	while ((line = get_next_line(fd)))
-	{
-		printf("-->%s", line);
-		free(line);
-	}
-	close(fd);
-	return(0);
-}

@@ -6,7 +6,7 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:15:01 by mgering           #+#    #+#             */
-/*   Updated: 2023/11/09 11:31:56 by mgering          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:35:18 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	ft_atoi(const char *str)
 	return (result);
 }
 //(str + i) ist dasselbe wie str[i] syntaxischer zucker
-
-/* #include <stdio.h>
+/* 
+#include <stdio.h>
 #include <string.h>
 
 int main() {
@@ -53,7 +53,7 @@ int main() {
     int result = atoi(string);
     int ft_result = ft_atoi(string);
     
-    printf("atoi: %d\n", result);
-    printf("ft_atoi: %d\n", ft_result);
+    printf("Needle: %d\n", result);
+    printf("Needle: %d\n", ft_result);
     return 0;
-}  */
+} */
