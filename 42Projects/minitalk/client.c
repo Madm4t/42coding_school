@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <signal.h>
+#include "minitalk.h"
 
 void signal_handler(int signum)
 {
@@ -40,3 +37,12 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+while (message[i] != '\0')
+	{
+		bit_index = 0;
+		while (bit_index < 8)
+		{
+			message[i] 
+		}
+	}

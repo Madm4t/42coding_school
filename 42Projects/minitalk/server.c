@@ -1,15 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <signal.h>
+#include "minitalk.h"
 
-void signal_handler(int signum, siginfo_t *info, void *context) {
-    if (signum == SIGUSR1 || signum == SIGUSR2) {
+void signal_handler(int signum, siginfo_t *info, void * context) {
+	(void)context; //suppresses the unused parameter
+    if (signum == SIGUSR1) 
+	{
         char message[] = "Received signal from client PID: \n";
         write(STDOUT_FILENO, message, sizeof(message) - 1);
         // Convert PID to string and use write() to output it, or just indicate signal was received.
         kill(info->si_pid, SIGUSR1);
     }
+	if (signum == SIGUSR2)
+	{
+
+	}
 }
 
 int main() {
