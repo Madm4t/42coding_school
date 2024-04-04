@@ -35,11 +35,12 @@ clean :
 	@ printf "object files removed.\n"
 
 fclean :
-	@ $(MAKE) fclean -C $(LIBFTPRINTF)
+	@ $(MAKE) fclean -C $(LIBFTPRINTF_DIR)
 	@ rm -rf $(SERVER) $(CLIENT)
 	@printf "client removed.\n"
 	@printf "server removed.\n"
 
-re : fclean all
+re	: fclean
+	$(MAKE) all
 
 .PHONY: all clean fclean re

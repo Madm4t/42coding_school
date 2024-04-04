@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:37:55 by mgering           #+#    #+#             */
-/*   Updated: 2023/11/27 17:06:08 by mgering          ###   ########.fr       */
+/*   Updated: 2024/04/04 13:52:38 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ int	write_char(int c, t_flags *flag)
 
 int	write_str(char *str, t_flags *flag)
 {
-	int	count;
-
-	count = 0;
 	if (str == NULL)
 		str = "(null)";
 	while (*str != '\0')
