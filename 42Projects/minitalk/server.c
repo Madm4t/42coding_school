@@ -23,7 +23,10 @@ void signal_handler(int signum, siginfo_t *info, void * context)
 			kill (info->si_pid, SIGUSR2);
 		}
 		else
+		{
 			write(STDOUT_FILENO, (const void*)&global_data.current_char, 1);
+			kill (info->si_pid, SIGUSR1);
+		}
 		global_data.bit_index = 0;
 		global_data.current_char = 0;
 	}
